@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Serviço</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        fieldset {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="serviceForm">
+
+ <!--infos--><fieldset id="Informações" class="border p-4 mb-4">
+                <legend class="w-auto px-2">Informações Pessoais</legend>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Insira seu nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sobrenome" class="form-label">Sobrenome:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" class="form-control" placeholder="Insira seu sobrenome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Insira seu Telefone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Insira seu e-mail" required>
+                </div>
+            </fieldset>
+
+<!--Detal--><fieldset id="Detalhes" class="border p-4 mb-4">
+                <legend class="w-auto px-2">Detalhes do Serviço</legend>
+                <div class="mb-3">
+                    <label for="mensagem" class="form-label">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" class="form-control" placeholder="Escreva uma mensagem" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="lingua" class="form-label">Língua Aplicada no Serviço:</label>
+                    <select id="lingua" name="lingua" class="form-select" required>
+                        <option value="ingles">Inglês</option>
+                        <option value="espanhol">Espanhol</option>
+                        <option value="frances">Francês</option>
+                        <option value="portugues">Português (pt-br)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="arquivo" class="form-label">Upload de Protótipo:</label>
+                    <input type="file" id="arquivo" name="arquivo" class="form-control" accept=".pdf,.doc,.docx,.jpeg,.png" required>
+                </div>
+                <div class="mb-3">
+                    <label for="linguagens" class="form-label">Linguagens Preferidas:</label>
+                    <select id="linguagens" name="linguagens" class="form-select" multiple required>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="csharp">C#</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Banco de Dados Recomendado:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="mysql" name="banco" value="mysql" class="form-check-input" required>
+                        <label for="mysql" class="form-check-label">MySQL</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="postgresql" name="banco" value="postgresql" class="form-check-input" required>
+                        <label for="postgresql" class="form-check-label">PostgreSQL</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" id="mongodb" name="banco" value="mongodb" class="form-check-input" required>
+                        <label for="mongodb" class="form-check-label">MongoDB</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="turno" class="form-label">Turno de Preferência para Reuniões:</label>
+                    <select id="turno" name="turno" class="form-select" required>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="horario" class="form-label">Melhor Horário para Reuniões:</label>
+                    <input type="time" id="horario" name="horario" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="data" class="form-label">Previsão de Entrega:</label>
+                    <input type="date" id="data" name="data" class="form-control" required>
+                </div>
+            </fieldset>
+            <div class="d-flex justify-content-between">
+                <button type="reset" class="btn btn-secondary">Limpar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('serviceForm').addEventListener('submit', function(event) {
+            alert('Formulário enviado com sucesso!');
+        });
+    </script>
+</body>
+</html>
